@@ -1,0 +1,73 @@
+# git clone 後、実行すべきコマンドがある場合はこんな感じ
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+      let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+  let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+      let cmd = 'gmake'
+      else
+        let cmd = 'make'
+      endif
+  let g:dein#plugin.build = cmd
+  '''
+#NERDTree(ツリーファイラー)
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+#NERDTreeの追加設定用
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+
+#色をつけるもの
+[[plugins]]
+repo = "tomasr/molokai"
+
+#自動で括弧を閉じてくれる
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+
+#自動補完プラグイン系スニペット機能
+[[plugins]]
+repo = 'Shougo/neocomplete'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+#スニペット集
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+#インデント表示
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+#html系結構便利系Emmet
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+#ステータスバー強化
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+on_source = ['vim-airline/vim-airline-themes']
+
+
+[[plugins]]
+repo   = 'Shougo/unite.vim'
+# unite.vim を読み込んだら一緒に読み込む
+[[plugins]]
+repo      = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+#Python用
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = 'python'
