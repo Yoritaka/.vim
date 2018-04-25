@@ -4,11 +4,15 @@
 
 ## ~/.vimrc
 
-    set encoding=utf-8
-    scriptencoding utf-8
-    set runtimepath+=~/.vim
-    runtime! configs/users/*.vim
-    runtime! configs/plugins/*.vim
+set encoding=utf-8
+scriptencoding utf-8
+set runtimepath+=~/.vim
+runtime! ./configs/users/*.vim
+runtime! ./configs/plugins/*.vim
+runtime! ./configs/plugins/install/*.vim
+
+:set number
+:set backspace=indent,eol,start
 
 ## init
 
